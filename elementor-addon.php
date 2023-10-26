@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Elementor Addon para Novidade Saudável
  * Description: Elementos customizáveis para Novidade Saudável
- * Version:     1.0.0
+ * Version:     1.0.1
  * Author:      BeeGo | Walfrido Oliveira
  * Author URI:  https://beego.dev
  * Text Domain: elementor-addon
