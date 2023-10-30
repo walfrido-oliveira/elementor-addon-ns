@@ -196,7 +196,7 @@ class Elementor_Custom_Accordion_Widget extends \Elementor\Widget_Base
           }
 
           .accordion-wrapper .custom-accordion-item .title {
-            border-radius: 4px;
+            border-radius: 4px 4px 0px 0px;
             cursor: pointer;
             display: flex;
             justify-content: space-between;
