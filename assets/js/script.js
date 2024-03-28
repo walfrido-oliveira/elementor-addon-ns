@@ -63,7 +63,7 @@ jQuery(document).ready(function ($) {
       url: '/wp-admin/admin-ajax.php',
       dataType: 'json',
       data: {
-        action: 'woo_product_load_more',
+        action: 'woo_search_product',
         paged: currentPage,
         product_cat: product_cat,
         orderby: orderby,

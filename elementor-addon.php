@@ -63,61 +63,6 @@ function register_widget_scripts()
 }
 add_action('elementor/frontend/after_register_scripts', 'register_widget_scripts');
 
-function woo_product_load_more()
-{
-	$args = [
-		'post_type' => 'product',
-		'posts_per_page' => 16,
-		'orderby' => 'date',
-		'order' => 'DESC',
-		'paged' => $_POST['paged'],
-	];
-
-	$args = set_product_args($_POST, $args);
-
-	$ajaxposts = new WP_Query($args);
-
-	$response = '';
-
-	if ($ajaxposts->have_posts()) {
-		ob_start();
-		while ($ajaxposts->have_posts()) : $ajaxposts->the_post();
-			$product = wc_get_product(get_the_ID());
-			if ($product) :
-				$price = $product->get_price(); ?>
-
-				<div class="woo-item">
-					<div class="woo-thumbnail">
-						<a href="<?php echo get_the_permalink()  ?>">
-							<?php echo get_the_post_thumbnail() ?>
-						</a>
-					</div>
-					<div class="woo-title">
-						<h2>
-							<a href="<?php echo get_the_permalink()  ?>"><?php echo get_the_title() ?></a>
-						</h2>
-					</div>
-					<div class="woo-price">
-						<p class="price">
-							<?php echo wc_price($price) ?>
-						</p>
-					</div>
-					<div class="woo-btn-buy"></div>
-				</div>
-			<?php endif;
-		endwhile;
-		$response = ob_get_clean();
-	}
-
-	return wp_send_json([
-		'render' => $response,
-		'found_posts' => $ajaxposts->found_posts,
-		'post_count' => $ajaxposts->post_count,
-	]);
-}
-add_action('wp_ajax_woo_product_load_more', 'woo_product_load_more');
-add_action('wp_ajax_nopriv_woo_product_load_more', 'woo_product_load_more');
-
 function woo_search_product()
 {
 	$args = [
@@ -125,7 +70,7 @@ function woo_search_product()
 		'posts_per_page' => 16,
 		'orderby' => 'date',
 		'order' => 'DESC',
-		'paged' => 1,
+		'paged' => isset($_POST['paged']) ? $_POST['paged'] : 1,
 	];
 
 	$args = set_product_args($_POST, $args);
