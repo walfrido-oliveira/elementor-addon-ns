@@ -291,3 +291,57 @@ if (!function_exists('set_post_args')) {
 		return $args;
 	}
 }
+
+function custom_post_type() {
+
+	$labels = array(
+		'name'                  => _x( 'Certificações', 'Post Type General Name', 'text_domain' ),
+		'singular_name'         => _x( 'Certificação', 'Post Type Singular Name', 'text_domain' ),
+		'menu_name'             => __( 'Certificações', 'text_domain' ),
+		'name_admin_bar'        => __( 'Certificações', 'text_domain' ),
+		'archives'              => __( 'Arquivo', 'text_domain' ),
+		'attributes'            => __( 'Atributos', 'text_domain' ),
+		'parent_item_colon'     => __( 'Parente:', 'text_domain' ),
+		'all_items'             => __( 'Todos', 'text_domain' ),
+		'add_new_item'          => __( 'Adicionar nova certificação', 'text_domain' ),
+		'add_new'               => __( 'Adicionar nova certificação', 'text_domain' ),
+		'new_item'              => __( 'Adicionar nova certificação', 'text_domain' ),
+		'edit_item'             => __( 'Editar certificação', 'text_domain' ),
+		'update_item'           => __( 'Atualizar', 'text_domain' ),
+		'view_item'             => __( 'Visualizar', 'text_domain' ),
+		'view_items'            => __( 'Visualizar', 'text_domain' ),
+		'search_items'          => __( 'Producrar', 'text_domain' ),
+		'not_found'             => __( 'Não achado', 'text_domain' ),
+		'not_found_in_trash'    => __( 'Não achado na lixeira', 'text_domain' ),
+		'featured_image'        => __( 'Imagem de destaque', 'text_domain' ),
+		'set_featured_image'    => __( '', 'text_domain' ),
+		'remove_featured_image' => __( '', 'text_domain' ),
+		'use_featured_image'    => __( '', 'text_domain' ),
+		'insert_into_item'      => __( '', 'text_domain' ),
+		'uploaded_to_this_item' => __( '', 'text_domain' ),
+		'items_list'            => __( '', 'text_domain' ),
+		'items_list_navigation' => __( '', 'text_domain' ),
+		'filter_items_list'     => __( '', 'text_domain' ),
+	);
+	$args = array(
+		'label'                 => __( 'Certificação', 'text_domain' ),
+		'description'           => __( 'Certificações de Terceiros', 'text_domain' ),
+		'labels'                => $labels,
+		'supports'              => array( 'title'),
+		'hierarchical'          => false,
+		'public'                => true,
+		'show_ui'               => true,
+		'show_in_menu'          => true,
+		'menu_position'         => 5,
+		'show_in_admin_bar'     => true,
+		'show_in_nav_menus'     => true,
+		'can_export'            => true,
+		'has_archive'           => false,
+		'exclude_from_search'   => true,
+		'publicly_queryable'    => true,
+		'capability_type'       => 'page',
+	);
+	register_post_type( 'cestificacoes', $args );
+
+}
+add_action( 'init', 'custom_post_type', 0 );

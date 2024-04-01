@@ -68,43 +68,6 @@ class Elementor_Custom_List_Widget extends \Elementor\Widget_Base
     // Content Tab End
 
 
-    // Style Tab Start
-    $this->start_controls_section(
-      'section_list_style',
-      [
-        'label' => esc_html__('Conteúdo', 'elementor-addon'),
-        'tab' => \Elementor\Controls_Manager::TAB_STYLE,
-      ]
-    );
-
-    $this->add_control(
-      'text_color',
-      [
-        'label' => esc_html__('Cor do texto', 'elementor-addon'),
-        'type' => \Elementor\Controls_Manager::COLOR,
-        'default' => '#35184D',
-        'selectors' => [
-          '{{WRAPPER}} {{CURRENT_ITEM}} .custom-list-item' => 'color: {{VALUE}};',
-        ],
-      ]
-    );
-
-    $this->add_control(
-      'destaque_color',
-      [
-        'label' => esc_html__('Cor do destaque', 'elementor-addon'),
-        'type' => \Elementor\Controls_Manager::COLOR,
-        'default' => '#C072A2',
-        'selectors' => [
-          '{{WRAPPER}} {{CURRENT_ITEM}} .custom-list-item .destaque' => 'color: {{VALUE}};',
-        ],
-      ]
-    );
-
-    $this->end_controls_section();
-
-    // Style Tab End
-
 
   }
 
