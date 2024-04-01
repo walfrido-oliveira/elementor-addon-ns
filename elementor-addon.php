@@ -12,30 +12,16 @@
 function register_elementor_ns_widget($widgets_manager)
 {
 
-	/*require_once( __DIR__ . '/widgets/custom-title-widget.php' );
-	require_once( __DIR__ . '/widgets/custom-text-widget.php' );
-	require_once( __DIR__ . '/widgets/custom-button-widget.php' );
-	require_once( __DIR__ . '/widgets/custom-list-widget.php' );
-	require_once( __DIR__ . '/widgets/custom-accordion-widget.php' );
-	require_once( __DIR__ . '/widgets/image-grid-widget.php' );
-	require_once( __DIR__ . '/widgets/archor-widget.php' );*/
-
 	require_once(__DIR__ . '/widgets/top-bar-widget.php');
 	require_once(__DIR__ . '/widgets/custom-carousel-widget.php');
 	require_once(__DIR__ . '/widgets/posts-widget.php');
 	require_once(__DIR__ . '/widgets/whatsapp-float.php');
 	require_once(__DIR__ . '/widgets/woo-archive-grid.php');
+	require_once(__DIR__ . '/widgets/posts-archive-grid.php');
 	require_once(__DIR__ . '/widgets/woo-filters.php');
+	require_once(__DIR__ . '/widgets/posts-filters.php');
 	require_once(__DIR__ . '/widgets/woo-title-category.php');
 	require_once(__DIR__ . '/widgets/woo-sugestao-uso.php');
-
-	/*$widgets_manager->register( new \Elementor_Custom_Title_Widget() );
-	$widgets_manager->register( new \Elementor_Custom_Text_Widget() );
-	$widgets_manager->register( new \Elementor_Custom_Button_Widget() );
-	$widgets_manager->register( new \Elementor_Custom_List_Widget() );
-	$widgets_manager->register( new \Elementor_Custom_Accordion_Widget() );
-	$widgets_manager->register( new \Elementor_Image_Grid_Widget() );
-	$widgets_manager->register( new \Elementor_Anchor_Widget() );*/
 
 	$widgets_manager->register(new \Elementor_Topo_Bar_Widget());
 	$widgets_manager->register(new \Elementor_Carousel_Widget());
@@ -43,7 +29,9 @@ function register_elementor_ns_widget($widgets_manager)
 	$widgets_manager->register(new \Elementor_Posts_Widget());
 	$widgets_manager->register(new \Elementor_Whatsapp_Float_Widget());
 	$widgets_manager->register(new \Elementor_Woo_Archive_Grid_Widget());
+	$widgets_manager->register(new \Elementor_Posts_Archive_Grid_Widget());
 	$widgets_manager->register(new \Elementor_Woo_Filters_Widget());
+	$widgets_manager->register(new \Elementor_posts_Filters_Widget());
 	$widgets_manager->register(new \Elementor_Woo_Title_Category_Widget());
 	$widgets_manager->register(new \Elementor_Woo_Sugestao_Uso_Widget());
 }
@@ -200,6 +188,106 @@ if (!function_exists('set_order_product')) {
 				$args['order'] = 'DESC';
 				break;
 		}
+		return $args;
+	}
+}
+
+function search_posts()
+{
+	$args = [
+		'post_type' => 'post',
+		'posts_per_page' => 16,
+		'orderby' => 'date',
+		'order' => 'DESC',
+		'paged' => isset($_POST['paged']) ? $_POST['paged'] : 1,
+	];
+
+	$args = set_post_args($_POST, $args);
+
+	$ajaxposts = new WP_Query($args);
+
+	$response = '';
+
+	if ($ajaxposts->have_posts()) {
+		ob_start();
+		while ($ajaxposts->have_posts()) : $ajaxposts->the_post(); ?>
+    <div class="post-item">
+    <div class="post-thumbnail">
+      <a href="<?php echo get_the_permalink()  ?>">
+        <?php echo get_the_post_thumbnail() ?>
+      </a>
+    </div>
+    <div class="post-content">
+      <div class="post-cats">
+        <ul class="post-categories">
+        <?php 
+          $categories = get_the_category(); 
+          foreach( $categories as $category ) : ?>
+            <li>
+              <a href="<?php echo esc_url( get_category_link( $category->term_id ) ) ?>" 
+              alt="<?php echo esc_attr( sprintf( __( 'Ver todos os posts de %s', 'textdomain' ), $category->name ) ) ?>"><?php echo esc_html( $category->name ) ?></a>
+            </li>
+          <?php endforeach; ?>
+        </ul>
+      </div>
+      <header class="header">
+        <h2 class="post-title">
+          <a href="<?php echo get_permalink() ?>"><?php echo get_the_title() ?></a>
+        </h2>
+      </header>
+    </div>
+  </div>
+		<?php endwhile;
+		$response = ob_get_clean();
+	}
+
+	return wp_send_json([
+		'render' => $response,
+		'found_posts' => $ajaxposts->found_posts,
+		'post_count' => $ajaxposts->post_count,
+	]);
+}
+add_action('wp_ajax_search_posts', 'search_posts');
+add_action('wp_ajax_nopriv_search_posts', 'search_posts');
+
+if (!function_exists('set_post_args')) {
+	function set_post_args($post, $args) {
+		if (isset($post['category'])) {
+			$args['tax_query'] = array(
+				array(
+				'taxonomy' => 'category',
+				'field' => 'slug',
+				'terms' => $post['category'],
+				),
+			);
+		}
+	
+		if (isset($post['categories'])) {
+			$args['tax_query'] = array(
+				array(
+				'taxonomy' => 'category',
+				'field' => 'slug',
+				'terms' => $post['categories'],
+				'operator' => 'IN',
+				),
+			);
+		}
+	
+		if (isset($post['tags'])) {
+			$args['tax_query'] = array(
+				array(
+				'taxonomy' => 'post_tag',
+				'field' => 'slug',
+				'terms' => $post['tags'],
+				'operator' => 'IN',
+				),
+			);
+		}
+	
+		if (isset($post['s'])) {
+			$args['s'] = $post['s'];
+		}
+	
 		return $args;
 	}
 }
