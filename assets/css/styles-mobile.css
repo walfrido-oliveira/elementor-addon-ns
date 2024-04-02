@@ -1,0 +1,147 @@
+@media (max-width: 767px) {
+  .top-bar {
+    display: block;
+    font-size: 1em;
+    line-height: 20px;
+  }
+
+  .top-bar .content {
+    display: inline;
+    width: 80%;
+  }
+
+  .top-bar .close {
+    position: absolute;
+    right: -17px;
+    top: 6px;
+  }
+
+  .admin-bar .custom-carousel .list-item {
+    height: 100%;
+    flex-wrap: wrap;
+  }
+
+  .custom-carousel .list-item .left {
+    order: 2;
+    width: 100%;
+    min-height: 253px;
+    align-items: baseline;
+  }
+
+  .custom-carousel .list-item .right {
+    width: 100%;
+    min-height: 227px;
+  }
+
+  .custom-carousel .list-item .left .content .title {
+    font-size: 34px;
+    line-height: 36px;
+  }
+
+  .custom-carousel .list-item .left .content {
+    padding: 1rem 3rem 1rem 3rem;
+  }
+
+  .custom-carousel .list-item .left a {
+    height: 53px;
+    font-size: 18px;
+  }
+
+  .custom-carousel .controls {
+    padding: 0 3rem;
+  }
+
+  .home .posts {
+    padding: 0 10px;
+    flex-wrap: wrap;
+  }
+
+  .posts .post-wrapper.featured,
+  .posts .post-wrapper {
+    width: 100%;
+  }
+
+  .posts .post-wrapper .post .post-content .post-cats ul li a {
+    font-size: 18px;
+    line-height: 25px;
+  }
+
+  .posts .post-wrapper .post .post-content .post-title a {
+    font-size: 24px;
+    line-height: 25px;
+  }
+
+  .woo-title_category h1 {
+    font-size: 38px;
+    line-height: 25px;
+  }
+
+  .woo-archive-grid .woo-archive-grid-wrapper {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .woo-archive-grid .woocommerce-result-count p {
+    font-size: 18px;
+    margin-bottom: 0px;
+  }
+
+  .woo-filters {
+    display: none;
+    height: 100vh;
+  }
+
+  .woo-archive-grid .button-filter-toggle-mobile,
+  .woo-filters .close-filter-mobile {
+    display: block;
+  }
+
+  .woo-filters .close-filter-mobile {
+    display: flex;
+    justify-content: end;
+  }
+
+  .woo-archive-grid .button-filter-toggle-mobile button,
+  .woo-filters .close-filter-mobile button {
+    border: .8px solid #333333;
+    color: #333333;
+    border-radius: 4px;
+    font-family: "Nunito Sans", Sans-serif;
+    font-size: 18px;
+  }
+
+  .woo-archive-grid .button-filter-toggle-mobile button:hover,
+  .woo-archive-grid .button-filter-toggle-mobile button:active,
+  .woo-filters .close-filter-mobile button:hover,
+  .woo-filters .close-filter-mobile button:active {
+    color: #333333;
+    background-color: #fff;
+  }
+
+  .woo-filters label {
+    font-size: 13px;
+    line-height: 17px;
+  }
+
+  .woo-filters .filter-group h3 {
+    font-size: 21px;
+    line-height: 28px;
+  }
+
+  .woo-archive-grid .woo-read-more a {
+    font-size: 18px;
+    line-height: 25px;
+    height: 53px;
+  }
+
+  .woo-archive-grid .woo-read-more {
+    margin-top: 2rem;
+  }
+
+  .woo-sugestao-uso .title-wrapper .title h2 {
+    font-size: 26px;
+  }
+
+  .woo-sugestao-uso.open .content * {
+    font-size: 15px;
+  }
+}

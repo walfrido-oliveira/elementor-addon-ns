@@ -101,7 +101,7 @@ body:not(.admin-bar) .custom-carousel .list-item {
 }
 
 .custom-carousel .list-item .left a:hover {
-  background: #FFC20E;
+  background: #fed41a;
   color: #340D8E;
 }
 
@@ -959,6 +959,7 @@ body:not(.admin-bar) .custom-carousel .list-item {
 .posts-filters .dropdown-check-list .custom-checkbox input:checked~.checkmark {
   background-color: #340D8E;
 }
+
 .posts-filters .dropdown-check-list .custom-checkbox .checkmark {
   position: absolute;
   top: 0;
@@ -967,4 +968,9 @@ body:not(.admin-bar) .custom-carousel .list-item {
   width: 17px;
   background-color: #FFFFFF;
   border: 1px solid #340D8E;
+}
+
+.woo-archive-grid .button-filter-toggle-mobile,
+.woo-filters .close-filter-mobile {
+  display: none;
 }

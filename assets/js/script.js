@@ -230,4 +230,13 @@ jQuery(document).ready(function ($) {
       }
     });
   }
+
+  $(".elementor-menu-toggle").on("click", function() {
+    $("#menu-mobile").toggle();
+  });
+
+  $(".button-filter-toggle-mobile button,  .woo-filters .close-filter-mobile button").on("click", function(e) {
+    e.preventDefault();
+    $(".woo-filters").slideToggle();
+  });
 });

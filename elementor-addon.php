@@ -40,7 +40,9 @@ add_action('elementor/widgets/register', 'register_elementor_ns_widget');
 function register_widget_styles()
 {
 	wp_register_style('elementor-addon-ns-style', plugins_url('assets/css/styles.css?v=' . time(), __FILE__), [], false);
+	wp_register_style('elementor-addon-ns-style-mobile', plugins_url('assets/css/styles-mobile.css?v=' . time(), __FILE__), [], false);
 	wp_enqueue_style('elementor-addon-ns-style');
+	wp_enqueue_style('elementor-addon-ns-style-mobile');
 }
 add_action('wp_enqueue_scripts', 'register_widget_styles');
 
