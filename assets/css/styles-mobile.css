@@ -6,13 +6,13 @@
   }
 
   .top-bar .content {
-    display: inline;
+    display: inline-block;
     width: 80%;
   }
 
   .top-bar .close {
     position: absolute;
-    right: -17px;
+    right: -10px;
     top: 6px;
   }
 
@@ -85,23 +85,32 @@
     margin-bottom: 0px;
   }
 
-  .woo-filters {
+  .woo-filters,
+  .posts-filters {
     display: none;
     height: 100vh;
   }
 
   .woo-archive-grid .button-filter-toggle-mobile,
-  .woo-filters .close-filter-mobile {
+  .woo-filters .close-filter-mobile,
+  .posts-archive-grid .button-filter-toggle-mobile,
+  .posts-filters .close-filter-mobile {
     display: block;
+    display: flex;
+    justify-content: end;
+    width: 100%;
   }
 
-  .woo-filters .close-filter-mobile {
+  .woo-filters .close-filter-mobile,
+  .posts-filters .close-filter-mobile {
     display: flex;
     justify-content: end;
   }
 
   .woo-archive-grid .button-filter-toggle-mobile button,
-  .woo-filters .close-filter-mobile button {
+  .woo-filters .close-filter-mobile button,
+  .posts-archive-grid .button-filter-toggle-mobile button,
+  .posts-filters .close-filter-mobile button  {
     border: .8px solid #333333;
     color: #333333;
     border-radius: 4px;
@@ -112,28 +121,36 @@
   .woo-archive-grid .button-filter-toggle-mobile button:hover,
   .woo-archive-grid .button-filter-toggle-mobile button:active,
   .woo-filters .close-filter-mobile button:hover,
-  .woo-filters .close-filter-mobile button:active {
+  .woo-filters .close-filter-mobile button:active,
+  .posts-archive-grid .button-filter-toggle-mobile button:hover,
+  .posts-archive-grid .button-filter-toggle-mobile button:active,
+  .posts-filters .close-filter-mobile button:hover,
+  .posts-filters .close-filter-mobile button:active {
     color: #333333;
     background-color: #fff;
   }
 
-  .woo-filters label {
+  .woo-filters label,
+  .posts-filters label {
     font-size: 13px;
     line-height: 17px;
   }
 
-  .woo-filters .filter-group h3 {
+  .woo-filters .filter-group h3,
+  .posts-filters .filter-group h3 {
     font-size: 21px;
     line-height: 28px;
   }
 
-  .woo-archive-grid .woo-read-more a {
+  .woo-archive-grid .woo-read-more a,
+  .posts-archive-grid .woo-read-more a {
     font-size: 18px;
     line-height: 25px;
     height: 53px;
   }
 
-  .woo-archive-grid .woo-read-more {
+  .woo-archive-grid .woo-read-more,
+  .posts-archive-grid .woo-read-more {
     margin-top: 2rem;
   }
 
@@ -143,5 +160,27 @@
 
   .woo-sugestao-uso.open .content * {
     font-size: 15px;
+  }
+
+  .posts-archive-grid .posts-archive-grid-wrapper {
+    grid-template-columns: repeat(1, 1fr) !important;
+  }
+
+  .posts-archive-grid .posts-result-count p {
+    font-size: 18px;
+    margin-bottom: 0px;
+  }
+
+  .posts-archive-grid .posts-result-count {
+    margin: 0 0 1em;
+  }
+
+  .posts-archive-grid .posts-archive-grid-wrapper .post-item .post-content .post-cats ul li a {
+    font-size: 14px;
+  }
+
+  .posts-archive-grid .posts-archive-grid-wrapper .post-item .post-content .post-title a {
+    font-size: 24px;
+    line-height: 25px;
   }
 }

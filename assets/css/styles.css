@@ -971,6 +971,8 @@ body:not(.admin-bar) .custom-carousel .list-item {
 }
 
 .woo-archive-grid .button-filter-toggle-mobile,
-.woo-filters .close-filter-mobile {
+.woo-filters .close-filter-mobile,
+.posts-archive-grid .button-filter-toggle-mobile,
+.posts-filters .close-filter-mobile {
   display: none;
 }

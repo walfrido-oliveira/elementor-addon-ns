@@ -235,8 +235,13 @@ jQuery(document).ready(function ($) {
     $("#menu-mobile").toggle();
   });
 
-  $(".button-filter-toggle-mobile button,  .woo-filters .close-filter-mobile button").on("click", function(e) {
+  $(".woo-archive-grid .button-filter-toggle-mobile button, .woo-filters .close-filter-mobile button").on("click", function(e) {
     e.preventDefault();
     $(".woo-filters").slideToggle();
+  });
+
+  $(".posts-archive-grid .button-filter-toggle-mobile button, .posts-filters .close-filter-mobile button").on("click", function(e) {
+    e.preventDefault();
+    $(".posts-filters").slideToggle();
   });
 });
