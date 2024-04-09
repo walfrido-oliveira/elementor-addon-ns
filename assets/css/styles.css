@@ -976,3 +976,20 @@ body:not(.admin-bar) .custom-carousel .list-item {
 .posts-filters .close-filter-mobile {
   display: none;
 }
+
+.woo-archive-grid .woo-read-more a:hover,
+.posts-archive-grid .woo-read-more a:hover {
+  background-color: #FED41A;
+}
+
+.installments-price .content {
+  font-family: "Nunito Sans", Sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 30px;
+  color: #340D8E;
+}
+
+.installments-price .content strong {
+  font-weight: 700;
+}

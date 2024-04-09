@@ -244,4 +244,43 @@ jQuery(document).ready(function ($) {
     e.preventDefault();
     $(".posts-filters").slideToggle();
   });
+
+  $(document).on('click', '.add_to_cart_button:not(.disabled)', function (e) {
+
+    var $thisbutton = $(this);
+    var data = {
+      product_id: $($thisbutton).attr("data-product_id")
+    };
+
+    e.preventDefault();
+
+    $(document.body).trigger('adding_to_cart', [$thisbutton, data]);
+
+    $.ajax({
+      type: 'POST',
+      url: woocommerce_params.wc_ajax_url.toString().replace('%%endpoint%%', 'add_to_cart'),
+      data: data,
+      beforeSend: function (response) {
+        $thisbutton.removeClass('added').addClass('loading');
+      },
+      complete: function (response) {
+        $thisbutton.addClass('added').removeClass('loading');
+      },
+      success: function (response) {
+
+        if (response.error && response.product_url) {
+          window.location = response.product_url;
+          return;
+        }
+
+        $(document.body).trigger('added_to_cart', [response.fragments, response.cart_hash, $thisbutton]);
+        $("div.widget_shopping_cart_content").html(response.fragments["div.widget_shopping_cart_content"]);
+        $(".elementor-menu-cart__toggle_button").click();
+      },
+    });
+
+    return false;
+
+  });
+
 });

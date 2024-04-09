@@ -22,6 +22,8 @@ function register_elementor_ns_widget($widgets_manager)
 	require_once(__DIR__ . '/widgets/posts-filters.php');
 	require_once(__DIR__ . '/widgets/woo-title-category.php');
 	require_once(__DIR__ . '/widgets/woo-sugestao-uso.php');
+	require_once(__DIR__ . '/widgets/woo-rating.php');
+	require_once(__DIR__ . '/widgets/woo-installments-price.php');
 
 	$widgets_manager->register(new \Elementor_Topo_Bar_Widget());
 	$widgets_manager->register(new \Elementor_Carousel_Widget());
@@ -34,6 +36,8 @@ function register_elementor_ns_widget($widgets_manager)
 	$widgets_manager->register(new \Elementor_posts_Filters_Widget());
 	$widgets_manager->register(new \Elementor_Woo_Title_Category_Widget());
 	$widgets_manager->register(new \Elementor_Woo_Sugestao_Uso_Widget());
+	$widgets_manager->register(new \Elementor_Woo_rating_Widget());
+	$widgets_manager->register(new \Elementor_Woo_installments_price_Widget());
 }
 add_action('elementor/widgets/register', 'register_elementor_ns_widget');
 
