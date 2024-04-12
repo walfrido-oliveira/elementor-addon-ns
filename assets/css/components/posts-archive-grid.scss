@@ -1,0 +1,155 @@
+.posts-archive-grid {
+	.posts-archive-grid-wrapper {
+		display: grid;
+		column-gap: 30px;
+		row-gap: 30px;
+		align-items: stretch;
+		.post-item {
+			position: relative;
+			overflow: hidden;
+			display: block;
+			.post-thumbnail {
+				overflow: hidden;
+				position: relative;
+				min-height: 422px;
+				a {
+					display: inline-block;
+					height: 100%;
+					width: 100%;
+					min-height: 422px;
+					img {
+						position: absolute;
+						height: auto;
+						width: auto;
+						max-width: 140%;
+						min-width: 100%;
+						min-height: 100%;
+						display: block;
+						left: 50%;
+						top: 50%;
+						transform: translate(-50%, -50%);
+						opacity: 0.9;
+						object-fit: cover;
+					}
+				}
+			}
+			.post-content {
+				position: absolute;
+				left: 0;
+				bottom: 0;
+				z-index: 3;
+				background: transparent;
+				padding: 3rem;
+				width: 100%;
+				.post-cats {
+					margin: 0 0 1rem 0;
+					ul {
+						list-style: none;
+						padding: 0;
+						margin: 0;
+						li {
+							display: inline-block;
+							margin: 0.1rem;
+							a {
+								font-family: $font-family_1;
+								font-style: normal;
+								font-weight: 400;
+								font-size: 18px;
+								line-height: 20px;
+								text-align: center;
+								color: $color_1;
+								text-transform: uppercase;
+							}
+						}
+					}
+				}
+				.post-title {
+					a {
+						display: block;
+						margin: 0;
+						font-family: $font-family_1;
+						font-style: normal;
+						font-weight: 700;
+						font-size: 28px;
+						line-height: 25px;
+						color: $color_1;
+						&:hover {
+							text-decoration: underline;
+						}
+					}
+				}
+			}
+		}
+	}
+	.button-filter-toggle-mobile {
+		display: none;
+	}
+	.woo-read-more {
+		a {
+			&:hover {
+				background-color: $background-color_8;
+			}
+		}
+	}
+
+	@media (max-width: $mobile-breakpoint) {
+		.button-filter-toggle-mobile {
+			display: block;
+			display: flex;
+			justify-content: end;
+			width: 100%;
+			button {
+				border: .8px solid #333333;
+				color: #333333;
+				border-radius: 4px;
+				font-family: $font-family_1;
+				font-size: 18px;
+				&:hover {
+					color: #333333;
+					background-color: $background-color_1;
+				}
+				&:active {
+					color: #333333;
+					background-color: $background-color_1;
+				}
+			}
+		}
+		.woo-read-more {
+			a {
+				font-size: 18px;
+				line-height: 25px;
+				height: 53px;
+			}
+			margin-top: 2rem;
+		}
+		.posts-archive-grid-wrapper {
+			grid-template-columns: repeat(1, 1fr) !important;
+			.post-item {
+				.post-content {
+					.post-cats {
+						ul {
+							li {
+								a {
+									font-size: 14px;
+								}
+							}
+						}
+					}
+					.post-title {
+						a {
+							font-size: 24px;
+							line-height: 25px;
+						}
+					}
+				}
+			}
+		}
+		.posts-result-count {
+			p {
+				font-size: 18px;
+				margin-bottom: 0px;
+			}
+			margin: 0 0 1em;
+		}
+	}
+}

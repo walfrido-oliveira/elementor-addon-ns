@@ -1,0 +1,40 @@
+.top-bar {
+	font-family: $font-family_1;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 17px;
+	line-height: 29px;
+	color: $color_1;
+	display: flex;
+
+	.my-icon-wrapper {
+		display: inline;
+		margin-right: 10px;
+	}
+  
+	.close {
+		margin-left: auto;
+		button {
+			display: flex;
+			border: 0px;
+			&:hover {
+				background-color: $background-color_1;
+			}
+		}
+	}
+
+	@media (max-width: $mobile-breakpoint) {
+		display: block;
+		font-size: 1em;
+		line-height: 20px;
+		.content {
+			display: inline-block;
+			width: 80%;
+		}
+		.close {
+			position: absolute;
+			right: -10px;
+			top: 6px;
+		}
+	}
+}

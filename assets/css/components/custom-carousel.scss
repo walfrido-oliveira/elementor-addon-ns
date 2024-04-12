@@ -1,0 +1,141 @@
+.custom-carousel {
+	overflow: hidden;
+	.list-wrapper {
+		display: flex;
+		overflow: hidden;
+		position: relative;
+	}
+	.list-item {
+		display: flex;
+		height: calc(100vh - 229px);
+		.left {
+			flex: 1;
+			background-color: $background-color_2;
+			display: flex;
+			align-items: center;
+			width: 36%;
+			.content {
+				display: flex;
+				flex-direction: column;
+				padding: 5rem;
+				.title {
+					font-family: $font-family_1;
+					font-style: normal;
+					font-weight: 700;
+					font-size: 60px;
+					line-height: 72px;
+					color: $color_1;
+				}
+			}
+			a {
+				background: #FFC20E;
+				border-radius: 6px;
+				max-width: 182px;
+				height: 71px;
+				font-family: $font-family_1;
+				font-style: normal;
+				font-weight: 400;
+				font-size: 22px;
+				line-height: 25px;
+				text-align: center;
+				color: $color_2;
+				border: 0px;
+				align-items: center;
+				display: flex;
+				justify-content: center;
+				&:hover {
+					background: #fed41a;
+					color: $color_2;
+				}
+			}
+		}
+		.right {
+			width: 64%;
+			img {
+				object-fit: cover;
+				height: 100%;
+				width: 100%;
+			}
+		}
+	}
+	.controls {
+		position: absolute;
+		width: 36%;
+		top: 93%;
+		display: flex;
+		align-items: center;
+		padding: 0 5rem;
+		.play {
+			padding: 0px;
+			border: 0px;
+			width: 27px;
+			height: 27px;
+			&:hover {
+				background-color: $background-color_1;
+				outline: 0px;
+			}
+			&:focus {
+				background-color: $background-color_1;
+				outline: 0px;
+			}
+		}
+		ul {
+			list-style-type: none;
+			padding-left: 10px;
+			display: flex;
+			gap: 10px;
+			li.active {
+				button {
+					svg {
+						fill: #FFFFFF;
+					}
+				}
+			}
+			li {
+				button {
+					padding: 0px;
+					border: 0px;
+					&:hover {
+						background-color: $background-color_1;
+						outline: 0px;
+					}
+					&:focus {
+						background-color: $background-color_1;
+						outline: 0px;
+					}
+				}
+			}
+		}
+	}
+
+	@media (max-width: $mobile-breakpoint) {
+		.list-item {
+			height: 100%;
+			flex-wrap: wrap;
+			.left {
+				order: 2;
+				width: 100%;
+				min-height: 253px;
+				align-items: baseline;
+				.content {
+					.title {
+						font-size: 34px;
+						line-height: 36px;
+					}
+					padding: 1rem 3rem 1rem 3rem;
+				}
+				a {
+					height: 53px;
+					font-size: 18px;
+				}
+			}
+			.right {
+				width: 100%;
+				min-height: 227px;
+			}
+		}
+		.controls {
+			padding: 0 3rem;
+		}
+	}
+}

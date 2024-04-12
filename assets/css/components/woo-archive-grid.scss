@@ -1,0 +1,136 @@
+.product-not-found {
+  color: #333333;
+  text-align: center;
+  font-family: "Nunito Sans", Sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.woo-archive-grid {
+	.woo-archive-grid-wrapper {
+		display: grid;
+		column-gap: 30px;
+		align-items: stretch;
+	}
+	display: flex;
+	flex-wrap: nowrap;
+	flex-direction: column;
+	.woocommerce-result-count {
+		p {
+			font-family: $font-family_1;
+			font-style: normal;
+			font-weight: 400;
+			font-size: 22px;
+			line-height: 30px;
+			color: $color_3;
+		}
+	}
+	.woo-read-more {
+		display: flex;
+		justify-content: center;
+		a {
+			font-family: $font-family_1;
+			font-size: 22px;
+			font-weight: 400;
+			line-height: 25px;
+			fill: #340D8E;
+			color: $color_2;
+			background-color: $background-color_3;
+			border-radius: 6px 6px 6px 6px;
+			cursor: pointer;
+			position: relative;
+			width: 176px;
+			display: inline-block;
+			text-align: center;
+			transition: all .3s;
+			padding: 0.618em 1em;
+			&:hover {
+				background-color: $background-color_8;
+			}
+		}
+	}
+	.woo-item {
+		.woo-thumbnail {
+			background-color: $background-color_4;
+			text-align: center;
+			img {
+				max-width: 150px;
+				object-fit: cover;
+				vertical-align: middle;
+				display: inline-block;
+				height: auto;
+				border: none;
+				border-radius: 0;
+				box-shadow: none;
+			}
+		}
+		.woo-title {
+			h2 {
+				a {
+					color: $color_3;
+					font-family: $font-family_1;
+					font-size: 20px;
+					font-weight: 700;
+					line-height: 25px;
+					&:hover {
+						text-decoration: underline;
+					}
+				}
+				line-height: 25px;
+			}
+		}
+		.woo-price {
+			.price {
+				color: $color_4;
+				font-family: $font-family_1;
+				font-size: 18px;
+				font-weight: 700;
+				line-height: 20px;
+			}
+		}
+	}
+	.button-filter-toggle-mobile {
+		display: none;
+	}
+
+	@media (max-width: $mobile-breakpoint) {
+		.woo-archive-grid-wrapper {
+			grid-template-columns: repeat(2, 1fr) !important;
+		}
+		.woocommerce-result-count {
+			p {
+				font-size: 18px;
+				margin-bottom: 0px;
+			}
+		}
+		.button-filter-toggle-mobile {
+			display: block;
+			display: flex;
+			justify-content: end;
+			width: 100%;
+			button {
+				border: .8px solid #333333;
+				color: #333333;
+				border-radius: 4px;
+				font-family: $font-family_1;
+				font-size: 18px;
+				&:hover {
+					color: #333333;
+					background-color: $background-color_1;
+				}
+				&:active {
+					color: #333333;
+					background-color: $background-color_1;
+				}
+			}
+		}
+		.woo-read-more {
+			a {
+				font-size: 18px;
+				line-height: 25px;
+				height: 53px;
+			}
+			margin-top: 2rem;
+		}
+	}
+}

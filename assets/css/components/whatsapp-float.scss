@@ -1,0 +1,35 @@
+.whatsapp-float {
+	.whatsapp-wrapper {
+		width: 60px;
+		height: 60px;
+		box-shadow: none;
+		background: 0 0;
+		padding: 0;
+		overflow: hidden;
+		transform: translate(0, 0);
+		position: fixed;
+		z-index: 9997;
+		top: auto;
+		right: 40px;
+		bottom: 24px;
+		left: auto;
+		a {
+			display: block;
+			position: absolute;
+			border-radius: 0;
+			background-image: url("data:image/svg+xml,%3Csvg width='98' height='98' viewBox='0 0 98 98' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='49' cy='49' r='49' fill='%2376A63E'/%3E%3Cpath d='M50.2367 17.5215C33.7579 17.5266 19.9903 31.312 19.9904 47.7772C19.9904 53.7133 21.7571 59.5771 25.0546 64.5343L19.981 78.0331L36.9707 74.9607C41.121 76.9891 45.6783 78.0055 50.2367 78.0084C66.7297 78.0198 80.5102 64.2527 80.5102 47.7772C80.5102 31.3206 66.7248 17.5118 50.2367 17.5215Z' stroke='white' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M51.9022 61.1022C55.9953 63.7298 60.2627 61.816 63.2347 59.5994C65.2876 58.0683 65.2194 55.1153 63.466 53.2487L60.0086 49.568C58.6972 50.8795 56.1415 51.5286 54.3658 50.9882C50.549 49.8266 48.947 47.8377 47.6488 45.8154C46.1579 43.4928 47.8416 40.0239 49.1531 38.7125L45.2994 35.1943C43.6747 33.7111 41.207 33.4609 39.7895 35.1431C36.9848 38.4714 35.2405 43.5244 37.3063 46.7419C41.0146 52.5177 46.126 57.3944 51.9022 61.1022Z' stroke='white' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+			z-index: 900;
+			box-shadow: none;
+			outline: 0;
+			width: 60px;
+			height: 60px;
+			background-size: 60px 60px;
+			cursor: pointer;
+			border: 0;
+			top: auto;
+			right: 0;
+			bottom: 0;
+			left: auto;
+		}
+	}
+}

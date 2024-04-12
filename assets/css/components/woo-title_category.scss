@@ -1,0 +1,19 @@
+.woo-title_category {
+	h1 {
+		color: $color_5;
+		font-family: $font-family_2;
+		font-size: 72px;
+		font-weight: 300;
+		line-height: 25px;
+	}
+	margin: 2rem 0rem 2rem 0rem;
+	transition: background .3s, border .3s, border-radius .3s, box-shadow .3s, transform var(--e-transform-transition-duration, .4s);
+	text-align: center;
+
+	@media (max-width: $mobile-breakpoint) {
+		h1 {
+			font-size: 38px;
+			line-height: 25px;
+		}
+	}
+}

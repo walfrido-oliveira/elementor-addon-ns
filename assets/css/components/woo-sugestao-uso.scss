@@ -1,0 +1,122 @@
+.woo-sugestao-uso {
+  &.close {
+    .title-wrapper {
+      .title {
+        h2 {
+          color: $color_3;
+        }
+      }
+      background: #FFFFFF;
+      box-shadow: -5px 5px 20px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      transition: background-color 0.5s ease-out;
+      .btn-close {
+        display: none;
+      }
+    }
+  }
+  &.open {
+    .title-wrapper {
+      .title {
+        h2 {
+          color: $color_1;
+        }
+      }
+      background: #CA4F16;
+      box-shadow: -5px 5px 20px rgba(0, 0, 0, 0.1);
+      border-radius: 10px 10px 0px 0px;
+      .btn-open {
+        display: none;
+      }
+    }
+    .content {
+      * {
+        margin: 0px;
+        font-family: $font-family_1;
+        font-weight: 400;
+        font-size: 18px;
+      }
+    }
+  }
+	.title-wrapper {
+		.title {
+			h2 {
+				font-family: $font-family_1;
+				font-size: 30px;
+				font-weight: 700;
+				margin: 0px;
+			}
+		}
+		display: flex;
+		justify-content: space-between;
+		padding: 10px 20px;
+		align-items: center;
+		cursor: pointer;
+	}
+	border-radius: 10px 10px 0px 0px;
+	box-shadow: -5px 5px 20px rgba(0, 0, 0, 0.1);
+	.btn-open {
+		width: 50px;
+		height: 50px;
+		border-radius: 50%;
+		background-color: $background-color_7;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: 0px;
+		&:hover {
+			background-color: $background-color_7;
+		}
+		&:active {
+			background-color: $background-color_7;
+		}
+		svg {
+			width: 24px;
+			height: 24px;
+		}
+	}
+	.btn-close {
+		width: 50px;
+		height: 50px;
+		border-radius: 50%;
+		background-color: $background-color_5;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: 0px;
+		&:hover {
+			background-color: $background-color_5;
+		}
+		&:active {
+			background-color: $background-color_5;
+		}
+		svg {
+			width: 24px;
+			height: 24px;
+		}
+	}
+	.content {
+		padding: 20px;
+		font-family: $font-family_1;
+		font-weight: 400;
+		font-size: 18px;
+	}
+
+	@media (max-width: $mobile-breakpoint) {
+		.title-wrapper {
+			.title {
+				h2 {
+					font-size: 26px;
+				}
+			}
+		}
+
+		&.open {
+			.content {
+				* {
+					font-size: 15px;
+				}
+			}
+		}
+	}
+}

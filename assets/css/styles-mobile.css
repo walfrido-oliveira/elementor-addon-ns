@@ -16,7 +16,7 @@
     top: 6px;
   }
 
-  .admin-bar .custom-carousel .list-item {
+  .custom-carousel .list-item {
     height: 100%;
     flex-wrap: wrap;
   }
