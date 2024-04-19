@@ -187,5 +187,11 @@
   .installments-price .content {
     text-align: center;
   }
+
+  .woo-archive-grid .woo-item .woo-thumbnail img {
+    height: 150px;
+    object-fit: contain;
+    margin-top: 0px;
+  }
   
 }

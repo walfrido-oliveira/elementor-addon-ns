@@ -83,7 +83,7 @@ class Elementor_Woo_Filters_Widget extends \Elementor\Widget_Base
         </div>
         <form class="woocommerce-ordering" method="get">
           <div class="filter-group">
-            <label for="orderby">Ordena por</label>
+            <label for="orderby">Ordenar por</label>
             <select name="orderby" id="orderby" class="woo-orderby" aria-label="Pedido da loja">
               <?php foreach ($filters as $key => $value) : ?>
                 <option value="<?php echo $key ?>" <?php if (isset($_GET['orderby'])) : if ($_GET['orderby'] == $key) : ?> selected="selected" <?php endif;

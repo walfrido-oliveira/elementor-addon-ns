@@ -74,7 +74,7 @@ class Elementor_Woo_installments_price_Widget extends \Elementor\Widget_Base
 
     <div class="installments-price">
       <div class="content">
-        Em até <strong><?php echo $settings['installments'] ?></strong> de <strong><?php echo wc_price($installment) ?></strong>
+        Em até <strong><?php echo $settings['installments'] ?></strong>x de <strong><?php echo wc_price($installment) ?></strong>
       </div>
     </div>
 <?php

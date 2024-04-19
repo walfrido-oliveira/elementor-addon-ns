@@ -62,8 +62,8 @@
   font-family: "Nunito Sans", Sans-serif;
   font-style: normal;
   font-weight: 700;
-  font-size: 60px;
-  line-height: 72px;
+  font-size: 3rem;
+  line-height: 1.2;
   color: #FFFFFF;
 }
 
@@ -81,12 +81,12 @@
   background: #FFC20E;
   border-radius: 6px;
   max-width: 182px;
-  height: 71px;
   font-family: "Nunito Sans", Sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 22px;
-  line-height: 25px;
+  padding: 1rem 1.5rem;
+  font-size: 1.125rem;
+  line-height: 1.2;
   text-align: center;
   color: #340D8E;
   border: 0px;
@@ -147,7 +147,6 @@
 .posts {
   display: flex;
   gap: 10px;
-  padding: 0 4rem;
 }
 
 .posts .post-wrapper .post {
@@ -157,21 +156,33 @@
 }
 
 .posts .post-wrapper.featured {
-  width: 70%;
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 66.66666667%;
+  flex: 0 0 66.66666667%;
+  max-width: 66.66666667%;
 }
 
 .posts .post-wrapper {
-  width: 30%;
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 33.33333333%;
+  flex: 0 0 33.33333333%;
+  max-width: 33.33333333%;
 }
 
 .posts .post-wrapper .post .thumb {
   overflow: hidden;
   position: relative;
-  min-height: 525px;
+  min-height: 473px;
+}
+
+.posts .post-wrapper:not(.featured) .post .thumb {
+  position: relative;
+  height: 0;
+  padding-bottom: 100%;
+  min-height: 0px;
 }
 
 .posts .post-wrapper .post .thumb a {
-  display: inline-block;
   height: 100%;
   width: 100%;
   min-height: 525px;
@@ -319,8 +330,11 @@
 }
 
 .woo-archive-grid .woo-item .woo-thumbnail {
-  background-color: #F7F7F7;
   text-align: center;
+  position: relative;
+  height: 0;
+  padding-bottom: 100%;
+  background: #f7f7f7;
 }
 
 .woo-archive-grid .woo-item .woo-thumbnail img {
@@ -332,6 +346,7 @@
   border: none;
   border-radius: 0;
   box-shadow: none;
+  margin-top: 30px;
 }
 
 .woo-archive-grid .woo-item .woo-title h2 a {
@@ -585,7 +600,7 @@
 .woo-title_category h1 {
   color: #CA4F16;
   font-family: "Merriweather", Sans-serif;
-  font-size: 72px;
+  font-size: 70px;
   font-weight: 300;
   line-height: 25px;
 }
@@ -713,7 +728,9 @@
 .posts-archive-grid .posts-archive-grid-wrapper .post-item .post-thumbnail {
   overflow: hidden;
   position: relative;
-  min-height: 422px;
+  position: relative;
+  height: 0;
+  padding-bottom: 100%;
 }
 
 .posts-archive-grid .posts-archive-grid-wrapper .post-item .post-thumbnail a {
@@ -850,6 +867,7 @@
 .posts-filters .dropdown-check-list:first-child {
   border-bottom: 0px;
 }
+
 .posts-filters .dropdown-check-list {
   display: inline-block;
   width: 100%;
@@ -907,6 +925,7 @@
   color: #333333;
   text-transform: none;
 }
+
 .posts-filters .dropdown-check-list .custom-checkbox {
   display: block;
   position: relative;
@@ -942,6 +961,7 @@
 .posts-filters .dropdown-check-list .custom-checkbox input:checked~.checkmark:after {
   display: block;
 }
+
 .posts-filters .dropdown-check-list .custom-checkbox .checkmark:after {
   left: 4px;
   top: 0px;
@@ -953,6 +973,7 @@
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
 }
+
 .posts-filters .dropdown-check-list .custom-checkbox .checkmark:after {
   content: "";
   position: absolute;
