@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+
 .top-bar {
   font-family: "Nunito Sans", Sans-serif;
   font-style: normal;
@@ -600,6 +602,7 @@
 .woo-title_category h1 {
   color: #CA4F16;
   font-family: "Merriweather", Sans-serif;
+  font-family: "Merriweather", Sans-serif;
   font-size: 70px;
   font-weight: 300;
   line-height: 25px;
@@ -1016,4 +1019,57 @@
 
 .installments-price .content strong {
   font-weight: 700;
+}
+
+.go-to-top {
+  width: 64px;
+  height: 64px;
+  box-shadow: none;
+  background: 0 0;
+  padding: 0;
+  overflow: hidden;
+  transform: translate(0, 0);
+  position: fixed;
+  z-index: 9998;
+  top: auto;
+  right: 40px;
+  bottom: 94px;
+  left: auto;
+  opacity: 0;
+  -webkit-transition: opacity .5s ease-in-out;
+  -moz-transition: opacity .5s ease-in-out;
+  -ms-transition: opacity .5s ease-in-out;
+  -o-transition: opacity .5s ease-in-out;
+  transition: opacity .5s ease-in-out;
+}
+
+.go-to-top .go-to-top-wrapper {
+  width: 64px;
+  height: 64px;
+  background-color: #FFC20E;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: absolute;
+  z-index: 901;
+  box-shadow: none;
+  outline: 0;
+  cursor: pointer;
+  border: 0;
+  top: auto;
+  right: 0;
+  bottom: 0;
+  left: auto;
+}
+
+.go-to-top .go-to-top-wrapper span {
+  font-family: "Nunito Sans", Sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  color: #340D8E;
+  text-transform: uppercase;
 }

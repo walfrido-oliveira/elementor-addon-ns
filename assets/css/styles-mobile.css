@@ -59,6 +59,8 @@
   .posts .post-wrapper.featured,
   .posts .post-wrapper {
     width: 100%;
+    max-width: 100%;
+    flex: 100%;
   }
 
   .posts .post-wrapper .post .post-content .post-cats ul li a {
@@ -192,6 +194,12 @@
     height: 150px;
     object-fit: contain;
     margin-top: 0px;
+  }
+
+  .posts .post-wrapper .post .thumb {
+    height: 0px;
+    min-height: 0px;
+    padding-bottom: 100%;
   }
   
 }
