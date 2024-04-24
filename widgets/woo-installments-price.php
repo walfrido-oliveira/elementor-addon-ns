@@ -52,6 +52,14 @@ class Elementor_Woo_installments_price_Widget extends \Elementor\Widget_Base
       ]
     );
 
+    $this->add_control(
+      'discount_pix',
+      [
+        'label' => esc_html__('Desconto Pix', 'elementor-addon'),
+        'type' => \Elementor\Controls_Manager::NUMBER,
+      ]
+    );
+
     $this->end_controls_section();
 
     // Content Tab End
@@ -67,14 +75,20 @@ class Elementor_Woo_installments_price_Widget extends \Elementor\Widget_Base
 
     $product = wc_get_product($id);
 
-    if (!$product) return; 
-    
+    if (!$product) return;
+
     $price = $product->get_price();
-    $installment = $price / $settings['installments']; ?>
+    $installment = $price / $settings['installments'];
+    $discountPix = $price - ($price * ($settings['discount_pix'] / 100));
+?>
 
     <div class="installments-price">
       <div class="content">
         Em até <strong><?php echo $settings['installments'] ?></strong>x de <strong><?php echo wc_price($installment) ?></strong>
+        <div class="discount-pix">
+          <img src="<?php echo plugin_dir_url( dirname( __FILE__ ) ) . 'assets/img/pix.png' ?>" alt="pix">
+          <strong><?php echo wc_price($discountPix) ?> </strong> com <?php echo $settings['discount_pix'] ?>% de desconto no PIX
+        </div>
       </div>
     </div>
 <?php
