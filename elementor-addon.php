@@ -116,7 +116,7 @@ add_action('wp_ajax_nopriv_woo_search_product', 'woo_search_product');
 
 if (!function_exists('set_product_args')) {
 	function set_product_args($post, $args) {
-		if (isset($post['product_cat'])) {
+		if ($post['product_cat'] != "") {
 			$args['tax_query'] = array(
 				array(
 				'taxonomy' => 'product_cat',
@@ -126,7 +126,7 @@ if (!function_exists('set_product_args')) {
 			);
 		}
 	
-		if (isset($post['categories'])) {
+		if ($post['categories'] != "") {
 			$args['tax_query'] = array(
 				array(
 				'taxonomy' => 'product_cat',
