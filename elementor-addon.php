@@ -150,6 +150,7 @@ if (!function_exists('set_product_args')) {
 	
 		if (isset($post['s'])) {
 			$args['s'] = $post['s'];
+			$args['relevanssi'] = true;
 		}
 	
 		if (isset($post['orderby'])) {
