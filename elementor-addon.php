@@ -57,13 +57,13 @@ function register_widget_scripts()
 	wp_register_script('elementor-addon-ns-script', plugins_url('assets/js/script.js?v=' . time(), __FILE__), array('jquery'), false);
 	wp_enqueue_script('elementor-addon-ns-script');
 }
-add_action('elementor/frontend/after_register_scripts', 'register_widget_scripts');
+add_action('init', 'register_widget_scripts');
 
 function woo_search_product()
 {
 	$args = [
 		'post_type' => 'product',
-		'posts_per_page' => 16,
+		'posts_per_page' => 18,
 		'orderby' => 'date',
 		'order' => 'DESC',
 		'paged' => isset($_POST['paged']) ? $_POST['paged'] : 1,

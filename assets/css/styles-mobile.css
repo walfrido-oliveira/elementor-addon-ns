@@ -40,6 +40,7 @@
 
   .custom-carousel .list-item .left .content {
     padding: 1rem 3rem 1rem 3rem;
+    min-height: 330px;
   }
 
   .custom-carousel .list-item .left a {
